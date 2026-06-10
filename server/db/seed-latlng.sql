@@ -1,0 +1,21 @@
+-- 种子数据经纬度更新
+UPDATE destinations SET latitude=31.332645, longitude=118.361234 WHERE name='镜湖公园';
+UPDATE destinations SET latitude=31.351580, longitude=118.378920 WHERE name='赭山公园';
+UPDATE destinations SET latitude=31.382450, longitude=118.395670 WHERE name='汀棠公园';
+UPDATE destinations SET latitude=31.328900, longitude=118.358900 WHERE name='滨江公园';
+UPDATE destinations SET latitude=31.395600, longitude=118.382300 WHERE name='雕塑公园';
+UPDATE destinations SET latitude=31.347800, longitude=118.373600 WHERE name='芜湖博物馆';
+UPDATE destinations SET latitude=31.362100, longitude=118.352800 WHERE name='芜湖海洋公园';
+UPDATE destinations SET latitude=30.913400, longitude=118.354200 WHERE name='大浦乡村世界';
+UPDATE destinations SET latitude=31.365400, longitude=118.356700 WHERE name='芜湖科技馆';
+UPDATE destinations SET latitude=31.318900, longitude=118.345600 WHERE name='松鼠小镇';
+UPDATE destinations SET latitude=31.341200, longitude=118.367800 WHERE name='耿福兴虾籽面';
+UPDATE destinations SET latitude=31.338900, longitude=118.364500 WHERE name='小笼汤包';
+UPDATE destinations SET latitude=31.335600, longitude=118.361200 WHERE name='渣肉蒸饭';
+UPDATE destinations SET latitude=31.332300, longitude=118.357800 WHERE name='红皮鸭子';
+UPDATE destinations SET latitude=31.329000, longitude=118.354500 WHERE name='四季春小吃';
+UPDATE destinations SET latitude=31.405600, longitude=118.398900 WHERE name='鸠兹古镇';
+UPDATE destinations SET latitude=31.348900, longitude=118.375600 WHERE name='芜湖古城';
+UPDATE destinations SET latitude=31.331200, longitude=118.362300 WHERE name='中江塔';
+UPDATE destinations SET latitude=31.327800, longitude=118.358900 WHERE name='雨耕山';
+UPDATE destinations SET latitude=31.324500, longitude=118.355600 WHERE name='滨江步道';

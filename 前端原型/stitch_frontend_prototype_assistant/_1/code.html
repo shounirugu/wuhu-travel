@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wuhu Travel - 芜湖旅游推荐平台</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=PingFang+SC:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .anhui-line {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #bdc9c8, transparent);
+            width: 100%;
+            margin: 4px 0;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #1A2430 0%, #157878 100%);
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-lowest": "#ffffff",
+                    "surface-bright": "#f8f9ff",
+                    "on-primary-fixed-variant": "#004f50",
+                    "outline-variant": "#bdc9c8",
+                    "surface-container": "#e5efff",
+                    "secondary-fixed": "#a4f4c0",
+                    "on-primary-container": "#a8fdfc",
+                    "secondary-fixed-dim": "#88d7a5",
+                    "on-surface": "#121c28",
+                    "on-tertiary-fixed": "#321300",
+                    "on-secondary-container": "#1e7047",
+                    "tertiary-fixed-dim": "#ffb68a",
+                    "inverse-surface": "#27313e",
+                    "primary-container": "#157878",
+                    "background": "#f8f9ff",
+                    "inverse-primary": "#80d4d4",
+                    "ink-black": "#1A2430",
+                    "tertiary-container": "#a95514",
+                    "on-secondary-fixed": "#002110",
+                    "on-surface-variant": "#3e4948",
+                    "on-primary-fixed": "#002020",
+                    "jiang-blue": "#157878",
+                    "cuisine-orange": "#D97A38",
+                    "border-gray": "#DFE3E6",
+                    "surface-dim": "#d0dbeb",
+                    "inverse-on-surface": "#e9f1ff",
+                    "nature-green": "#3D8B5F",
+                    "on-background": "#121c28",
+                    "secondary-container": "#a1f1bd",
+                    "primary-fixed": "#9cf1f0",
+                    "on-error": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed": "#ffdbc8",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-fixed-variant": "#743500",
+                    "secondary": "#186c43",
+                    "primary": "#005e5e",
+                    "surface-container-low": "#eef4ff",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-container": "#ffebe0",
+                    "surface-container-high": "#dfe9fa",
+                    "photo-purple": "#7B5EA7",
+                    "surface-tint": "#006a6a",
+                    "surface-container-highest": "#d9e3f4",
+                    "primary-fixed-dim": "#80d4d4",
+                    "surface-variant": "#d9e3f4",
+                    "on-primary": "#ffffff",
+                    "on-secondary-fixed-variant": "#00522f",
+                    "tertiary": "#883f00",
+                    "river-bg": "#F6F8F8",
+                    "outline": "#6e7979",
+                    "surface": "#f8f9ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-padding": "24px",
+                    "grid-gap": "24px",
+                    "section": "80px",
+                    "max-width": "1200px",
+                    "sub-section": "40px",
+                    "compact-padding": "16px"
+            },
+            "fontFamily": {
+                    "caption": ["PingFang SC"],
+                    "label-sm": ["PingFang SC"],
+                    "h1": ["PingFang SC"],
+                    "h3": ["PingFang SC"],
+                    "body-md": ["PingFang SC"],
+                    "h2": ["PingFang SC"],
+                    "body-lg": ["PingFang SC"],
+                    "display": ["PingFang SC"]
+            },
+            "fontSize": {
+                    "caption": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "h1": ["36px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "h3": ["18px", {"lineHeight": "1.45", "fontWeight": "600"}],
+                    "body-md": ["15px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "h2": ["24px", {"lineHeight": "1.35", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "1.7", "fontWeight": "400"}],
+                    "display": ["56px", {"lineHeight": "1.2", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-river-bg text-on-surface font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-container-padding h-20 max-w-max-width mx-auto bg-surface-container-lowest/80 backdrop-blur-md shadow-sm">
+<div class="font-h2 text-h2 font-bold text-jiang-blue">Wuhu Travel</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="font-h3 text-h3 text-jiang-blue border-b-2 border-jiang-blue pb-1" href="#">Home</a>
+<a class="font-h3 text-h3 text-on-surface-variant hover:text-jiang-blue transition-colors" href="#">Scenery</a>
+<a class="font-h3 text-h3 text-on-surface-variant hover:text-jiang-blue transition-colors" href="#">Activity</a>
+<a class="font-h3 text-h3 text-on-surface-variant hover:text-jiang-blue transition-colors" href="#">Food</a>
+<a class="font-h3 text-h3 text-on-surface-variant hover:text-jiang-blue transition-colors" href="#">Photo</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined text-jiang-blue" data-icon="search">search</span>
+</button>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="max-w-max-width mx-auto flex flex-col md:flex-row min-h-[600px] overflow-hidden">
+<!-- Hero Left (40%) -->
+<div class="w-full md:w-[40%] hero-gradient flex flex-col justify-center px-12 py-16 relative">
+<!-- Anhui-style decorative lines -->
+<div class="absolute top-12 left-0 w-24">
+<div class="anhui-line opacity-30"></div>
+<div class="anhui-line opacity-50 w-32"></div>
+<div class="anhui-line opacity-20 w-16"></div>
+</div>
+<h1 class="font-display text-display text-white mb-4 leading-tight">芜湖，<br/><span class="text-primary-fixed">半城山水半城诗</span></h1>
+<p class="font-h2 text-h2 text-surface-variant mb-8 font-light">江水穿城，徽韵千年</p>
+<button class="w-fit bg-primary-container text-white px-9 py-3.5 rounded-lg font-h3 text-h3 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 shadow-lg">
+                    开始探索
+                </button>
+<div class="absolute bottom-12 right-0 w-32">
+<div class="anhui-line opacity-20 w-24 ml-auto"></div>
+<div class="anhui-line opacity-40 ml-auto"></div>
+<div class="anhui-line opacity-10 w-12 ml-auto"></div>
+</div>
+</div>
+<!-- Hero Right (60%) -->
+<div class="w-full md:w-[60%] relative group overflow-hidden h-[400px] md:h-auto">
+<div class="flex h-full transition-transform duration-700 ease-out" id="hero-carousel">
+<div class="min-w-full h-full relative">
+<img class="w-full h-full object-cover" data-alt="A cinematic wide shot of the Mirror Lake in Wuhu at sunset. The calm water reflects the vibrant orange and deep blue sky. Traditional Chinese pavilions with curved roofs are nestled among weeping willow trees along the shore. The atmosphere is peaceful, sophisticated, and culturally rich, echoing a classic Anhui aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQUj9QGknsUg3r0Vedae5AK_yhofwGQo-uP6cS1Z-zVwx9_0fkENHpEwqj7YqDEDmhKLyOMBTa6mSZlL6QXE9EsGjL3nYBBU_uvEm3Pfq1hIsl1PrTASYtWPECva0IsFBDbnvvcvJal4z6X4lUr4xAuF7CG-PeI7reiuCHPH6XKkOHtSvWFVSVMwSty6nR3swnI6qLNlNLAPjA-h9Ltx3sFxfR2R-u-Jw9grfs1FqResVCqfyiFFj4h8HNMLgInhS6KqTeteeirrc-"/>
+<div class="absolute bottom-8 left-8 bg-black/40 backdrop-blur-md p-4 rounded-lg text-white">
+<span class="font-label-sm text-label-sm uppercase tracking-wider opacity-80">Landmark 01</span>
+<h3 class="font-h3 text-h3">镜湖风景区</h3>
+</div>
+</div>
+</div>
+<!-- Simple Carousel Dots -->
+<div class="absolute bottom-8 right-8 flex gap-2">
+<div class="w-8 h-1 bg-white rounded-full"></div>
+<div class="w-4 h-1 bg-white/30 rounded-full"></div>
+<div class="w-4 h-1 bg-white/30 rounded-full"></div>
+</div>
+</div>
+</section>
+<!-- Categories Section: Bento Grid 2+1+1 -->
+<section class="max-w-max-width mx-auto px-container-padding py-section">
+<h2 class="font-h1 text-h1 text-jiang-blue mb-10 text-center">探索多元芜湖</h2>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-grid-gap h-auto md:h-[500px]">
+<!-- Scenery (2 units wide) -->
+<div class="md:col-span-2 bg-nature-green rounded-xl relative overflow-hidden group cursor-pointer">
+<div class="absolute inset-0 bg-gradient-to-br from-nature-green to-[#2D6A4F] opacity-90"></div>
+<img class="absolute inset-0 w-full h-full object-cover mix-blend-overlay group-hover:scale-110 transition-transform duration-500" data-alt="A lush green mountain forest in Wuhu, with mist clinging to the ancient trees. The lighting is soft and ethereal, emphasizing the 'freshness and natural beauty' brand pillar. The color palette is dominated by deep forest greens and misty whites, creating a serene and breathable composition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrMhEHj6pMGWVBq6Dvmh33R0eUhSiAZbC2IGD_2UqLSAAHl5v920AJu1YzbWzm3OwZPNI_AdxW52p9PrlZpNKQvqz_aT4WseDY2_eN2yl4yYE5Gr4CASl-19ewlhEyX0iu3MR0uYZxN3vKIMSUiW1uk5QaUGOLS7Nh0l739V4NSWt_MH6981CnPBnpmVB8ZRQQyaXAKD9z2dvrHPYszkm9hyndalHdFto3KJK-sn3Bhj0Em-Pa03gk5Z9xswD_KSA3u1t3iEiRJkFG"/>
+<div class="relative z-10 p-8 h-full flex flex-col justify-end">
+<span class="material-symbols-outlined text-white text-4xl mb-4" data-icon="forest">forest</span>
+<h3 class="font-h2 text-h2 text-white">山水风光</h3>
+<p class="font-body-md text-white/80">寻觅半城山水的自然诗意</p>
+</div>
+</div>
+<!-- Activity -->
+<div class="bg-jiang-blue rounded-xl relative overflow-hidden group cursor-pointer">
+<div class="absolute inset-0 bg-gradient-to-br from-jiang-blue to-[#004F50] opacity-90"></div>
+<div class="relative z-10 p-8 h-full flex flex-col items-center justify-center text-center">
+<span class="material-symbols-outlined text-white text-5xl mb-4" data-icon="festival">festival</span>
+<h3 class="font-h3 text-h3 text-white">民俗活动</h3>
+<p class="font-caption text-white/70 mt-2">感受千年的徽派人文律动</p>
+</div>
+</div>
+<!-- Food -->
+<div class="bg-cuisine-orange rounded-xl relative overflow-hidden group cursor-pointer">
+<div class="absolute inset-0 bg-gradient-to-br from-cuisine-orange to-[#A65E2A] opacity-90"></div>
+<div class="relative z-10 p-8 h-full flex flex-col items-center justify-center text-center">
+<span class="material-symbols-outlined text-white text-5xl mb-4" data-icon="restaurant">restaurant</span>
+<h3 class="font-h3 text-h3 text-white">地道美食</h3>
+<p class="font-caption text-white/70 mt-2">寻味江城，舌尖上的徽韵</p>
+</div>
+</div>
+<!-- Photo (Full Width) -->
+<div class="md:col-span-4 bg-photo-purple rounded-xl h-32 relative overflow-hidden group cursor-pointer flex items-center px-12">
+<div class="absolute inset-0 bg-gradient-to-r from-photo-purple to-[#5A4482] opacity-90"></div>
+<div class="relative z-10 flex w-full justify-between items-center">
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined text-white text-4xl" data-icon="photo_camera">photo_camera</span>
+<div>
+<h3 class="font-h3 text-h3 text-white">光影江城</h3>
+<p class="font-caption text-white/80">镜头下的芜湖绝美瞬间</p>
+</div>
+</div>
+<button class="bg-white/20 hover:bg-white/30 text-white px-6 py-2 rounded-full border border-white/30 backdrop-blur-sm transition-all">浏览影集</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Section -->
+<section class="max-w-max-width mx-auto px-container-padding py-section bg-white/50">
+<div class="flex justify-between items-end mb-10">
+<div>
+<h2 class="font-h1 text-h1 text-on-surface">热门推荐</h2>
+<div class="w-16 h-1 bg-jiang-blue mt-2"></div>
+</div>
+<a class="text-jiang-blue font-h3 text-h3 flex items-center hover:opacity-70" href="#">查看更多 <span class="material-symbols-outlined ml-1">arrow_forward</span></a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-grid-gap">
+<!-- Card 1 -->
+<div class="bg-white rounded-xl shadow-sm hover:shadow-md hover:-translate-y-[6px] transition-all duration-300 overflow-hidden border border-border-gray/30">
+<div class="h-64 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A high-end architectural photo of the Jiu Zi Ancient Town at night. Warm lantern lights glow against dark grey brick walls and intricate wooden carvings. The scene is reflected in a quiet canal, creating a serene, historical atmosphere. The lighting is low-key and dramatic, highlighting the tactile textures of traditional Anhui architecture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_u6euqzIPRh7KEaTOLB8vGO5DgtRipqwMspwv1GCSORpUZpRPQiDeAio3cNEpmOi4S82F4Pio20PnKU-wPFAuBDPl9DsExOHHishQp2fSvjbbeUDY5h0P6tw8OD23DuPTiPJ-IHOyAFeW_N2Yvl4hmepeNk4cdsNz-iBbeVAHBHoGFPmkYtpPa8WZa3dsu5XGY4O7dJVFmGuwIGDEAsjLRgqJ-ih96lO80N94iYjgSz93Oc5trCzL_kCyqMODcUDQvSfvuuKANNvV"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h4 class="font-h2 text-h2 text-on-surface">鳩兹古镇</h4>
+<span class="text-nature-green font-label-sm text-label-sm bg-nature-green/10 px-2 py-1 rounded">历史地标</span>
+</div>
+<p class="font-body-md text-on-surface-variant mb-6">穿越千年的繁华街巷，体验正宗徽派文化底蕴。</p>
+<div class="flex justify-between items-center">
+<span class="text-jiang-blue font-bold">￥0 门票</span>
+<button class="text-on-surface-variant hover:text-jiang-blue"><span class="material-symbols-outlined" data-icon="favorite">favorite</span></button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-white rounded-xl shadow-sm hover:shadow-md hover:-translate-y-[6px] transition-all duration-300 overflow-hidden border border-border-gray/30">
+<div class="h-64 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A wide landscape shot of Zheshan Park in Wuhu during autumn. Golden yellow ginkgo trees contrast with the deep blue sky. A traditional pagoda peaks through the colorful canopy from the mountain top. The lighting is crisp and bright, capturing a high-contrast, modern nature scene that feels vibrant and inviting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKAVZK9B8gqL9KunA2l9LGGBle4_YG0REYl6HgrVH8A99s1EMEGPfW1ZHcVlLkqmS7yK0r89I-cFGRxCl2EqFHT24syS5v2O72WB_cgGcmUxHD5wb98_W-tH4RRIxcoLbtYOTGtw2vtaxjkh-p7Zr0P2Idv5kiCWgxMV2QX5w1IOKs343IqXbNETq9PFNqmGkXXBv3Fx4Tn3Sc6vxxBPzTqDARiEq7WRHV7unLYE0tshTs8ODr11c_SysZAefeGw53uOYB0XlKnCDQ"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h4 class="font-h2 text-h2 text-on-surface">赭山公园</h4>
+<span class="text-jiang-blue font-label-sm text-label-sm bg-jiang-blue/10 px-2 py-1 rounded">休闲健身</span>
+</div>
+<p class="font-body-md text-on-surface-variant mb-6">江城的天然氧吧，登顶可俯瞰半城山水美景。</p>
+<div class="flex justify-between items-center">
+<span class="text-jiang-blue font-bold">免费开放</span>
+<button class="text-on-surface-variant hover:text-jiang-blue"><span class="material-symbols-outlined" data-icon="favorite">favorite</span></button>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-white rounded-xl shadow-sm hover:shadow-md hover:-translate-y-[6px] transition-all duration-300 overflow-hidden border border-border-gray/30">
+<div class="h-64 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional food photography shot of a steaming bowl of Geng Fu Xing noodles. The dish is presented on a minimalist ceramic plate over a dark wooden table. Soft steam rises, catching a side light that highlights the texture of the rich broth and fresh ingredients. The image has a warm, appetizing glow with high-end, tactile appeal." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDifiyVDJldWTVukFw2XdsMveD7L-C_ploVOV4sat9Zlm6QUnkNfGE0b2uzfJQkRCZ8UVNPPbqvidG9axszKWh1TnYjHqLGaokQsQXF2ML-FXhhCBuGMsIyr0mn8aANfn4Iknm5Zdd8oySJDXe9Zyt9T-achDS4FGz1sPeyGQ000aRVbrxJ3a52J9t98GJdXSt1w3V2_DLGhOy9JyF32bwCujhFDbRw_8mLMmnPbFjz1zeGZiJ3mC_TBqQJp9sMORYa_mvQoRaSzoM2"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h4 class="font-h2 text-h2 text-on-surface">耿福兴</h4>
+<span class="text-cuisine-orange font-label-sm text-label-sm bg-cuisine-orange/10 px-2 py-1 rounded">中华老字号</span>
+</div>
+<p class="font-body-md text-on-surface-variant mb-6">百年传承的经典芜湖早茶，让味蕾记住江城记忆。</p>
+<div class="flex justify-between items-center">
+<span class="text-jiang-blue font-bold">人均 ￥45</span>
+<button class="text-on-surface-variant hover:text-jiang-blue"><span class="material-symbols-outlined" data-icon="favorite">favorite</span></button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- AI Chat Floating Button -->
+<div class="fixed bottom-8 right-8 z-[100]">
+<button class="w-14 h-14 bg-jiang-blue text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all duration-300" id="ai-trigger">
+<span class="material-symbols-outlined text-3xl" data-icon="auto_awesome">auto_awesome</span>
+</button>
+<div class="absolute bottom-16 right-0 w-[350px] h-[500px] bg-white rounded-xl shadow-2xl scale-0 origin-bottom-right transition-transform duration-300 overflow-hidden flex flex-col border border-border-gray" id="ai-window">
+<div class="bg-jiang-blue p-4 text-white flex justify-between items-center">
+<span class="font-h3 text-h3">江城旅伴 AI</span>
+<span class="material-symbols-outlined cursor-pointer" id="ai-close">close</span>
+</div>
+<div class="flex-1 p-4 overflow-y-auto space-y-4">
+<div class="bg-surface-container p-3 rounded-lg text-on-surface-variant max-w-[85%]">
+                    您好！我是您的芜湖旅游助手。想知道最近哪里的樱花开得最好吗？
+                </div>
+</div>
+<div class="p-4 border-t border-border-gray">
+<div class="flex gap-2">
+<input class="flex-1 border-border-gray rounded-lg px-3 py-2 text-sm focus:ring-jiang-blue focus:border-jiang-blue" placeholder="咨询您的旅行..." type="text"/>
+<button class="bg-jiang-blue text-white p-2 rounded-lg"><span class="material-symbols-outlined" data-icon="send">send</span></button>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="w-full py-section px-container-padding flex flex-col md:flex-row justify-between items-center bg-river-bg border-t border-border-gray">
+<div class="mb-8 md:mb-0 text-center md:text-left">
+<div class="font-h3 text-h3 font-bold text-on-surface mb-2">Wuhu Travel</div>
+<p class="font-body-md text-on-surface-variant max-w-sm">© 2024 Wuhu Travel platform. Exploring the spirit of the Yangtze.</p>
+</div>
+<div class="flex gap-8">
+<a class="font-body-md text-on-surface-variant hover:text-jiang-blue transition-colors" href="#">About Us</a>
+<a class="font-body-md text-on-surface-variant hover:text-jiang-blue transition-colors" href="#">Contact</a>
+<a class="font-body-md text-on-surface-variant hover:text-jiang-blue transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-md text-on-surface-variant hover:text-jiang-blue transition-colors" href="#">Terms of Service</a>
+</div>
+</footer>
+<script>
+        // AI Chat Toggle
+        const trigger = document.getElementById('ai-trigger');
+        const windowElem = document.getElementById('ai-window');
+        const closeBtn = document.getElementById('ai-close');
+
+        trigger.addEventListener('click', () => {
+            windowElem.classList.toggle('scale-0');
+            windowElem.classList.toggle('scale-100');
+        });
+
+        closeBtn.addEventListener('click', () => {
+            windowElem.classList.add('scale-0');
+            windowElem.classList.remove('scale-100');
+        });
+
+        // Simple scroll effect for Nav
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-md');
+            } else {
+                nav.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body></html>
