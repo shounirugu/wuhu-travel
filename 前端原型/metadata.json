@@ -1,6 +1,0 @@
-{
-  "name": "Wuhu Travel",
-  "description": "A premium recommendation and discovery platform for Wuhu, Anhui. Explore scenery, heritage, local delicacies, and cultural activities.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}
