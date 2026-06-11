@@ -42,7 +42,7 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'Authorization'],
 }));
 
-app.use(express.json({ limit: '1mb' }));
+app.use(express.json({ limit: '3mb' }));
 
 app.get('/', (req, res) => {
   res.json({ code: 200, message: '芜湖旅游推荐平台 API' });
