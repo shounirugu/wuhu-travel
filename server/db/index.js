@@ -9,6 +9,8 @@ const pool = mysql.createPool({
   port: parseInt(process.env.DB_PORT, 10) || 3306,
   waitForConnections: true,
   connectionLimit: 10,
+  // Aiven 云数据库需要 SSL，本地开发时设 DB_SSL=false 可跳过
+  ssl: process.env.DB_SSL === 'false' ? false : { rejectUnauthorized: false },
 });
 
 module.exports = pool;

@@ -1,1 +1,16 @@
-{}
+{
+  "name": "wuhu-travel",
+  "version": "1.0.0",
+  "description": "芜湖旅游推荐平台 - Vercel 部署根配置",
+  "dependencies": {
+    "axios": "^1.17.0",
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "express-rate-limit": "^8.5.2",
+    "helmet": "^8.2.0",
+    "jsonwebtoken": "^9.0.3",
+    "mysql2": "^3.11.0"
+  }
+}
