@@ -1,7 +1,7 @@
 <template>
   <div class="dest-card" @click="$router.push(`/detail/${destination.id}`)">
     <div class="dest-card__image">
-      <img :src="destination.image_url" :alt="destination.name" loading="lazy" />
+      <img :src="destination.image_url" :alt="destination.name" loading="lazy" @error="onError" />
       <div v-if="destination.is_featured" class="dest-card__badge">热门</div>
     </div>
     <div class="dest-card__body">
@@ -38,6 +38,12 @@ const props = defineProps({
     required: true,
   },
 })
+
+const DEFAULT_IMG = 'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22600%22%3E%3Crect fill=%22%23157878%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 fill=%22white%22 font-size=%2220%22 text-anchor=%22middle%22 dy=%22.35em%22%3E%E8%8A%9C%E6%B9%96%E6%97%85%E6%B8%B8%3C/text%3E%3C/svg%3E'
+
+function onError(e) {
+  e.target.src = DEFAULT_IMG
+}
 
 const categoryClass = computed(() => {
   const map = {

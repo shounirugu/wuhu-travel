@@ -11,7 +11,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, nextTick, onMounted, onUnmounted } from 'vue'
 import AMapLoader from '@amap/amap-jsapi-loader'
 import { Location } from '@element-plus/icons-vue'
 
@@ -32,6 +32,8 @@ onMounted(async () => {
       version: '2.0',
       plugins: ['AMap.Marker']
     })
+
+    await nextTick()
 
     map = new AMap.Map(mapContainer.value, {
       zoom: 15,
