@@ -5,7 +5,8 @@ const auth = require('../middleware/auth');
 const rateLimit = require('express-rate-limit');
 
 const DEEPSEEK_API_KEY = process.env.DEEPSEEK_API_KEY;
-const DEEPSEEK_BASE_URL = 'https://api.deepseek.com';
+const DEEPSEEK_BASE_URL = process.env.DEEPSEEK_BASE_URL || 'https://api.sensenova.cn/compatible-mode/v2';
+const AI_MODEL = process.env.AI_MODEL || 'SenseChat-Turbo';
 
 // AI rate limit: 20 requests per 15 minutes per IP
 const aiLimiter = rateLimit({
@@ -94,14 +95,14 @@ router.post('/chat', aiLimiter, async (req, res, next) => {
     const timeout = setTimeout(() => controller.abort(), 15000);
 
     try {
-      const response = await fetch(`${DEEPSEEK_BASE_URL}/v1/chat/completions`, {
+      const response = await fetch(`${DEEPSEEK_BASE_URL}/chat/completions`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${DEEPSEEK_API_KEY}`,
         },
         body: JSON.stringify({
-          model: 'deepseek-chat',
+          model: AI_MODEL,
           messages,
           temperature: 0.7,
           max_tokens: 1000,
@@ -112,7 +113,7 @@ router.post('/chat', aiLimiter, async (req, res, next) => {
       clearTimeout(timeout);
 
       if (!response.ok) {
-        throw new Error(`DeepSeek API error: ${response.status}`);
+        throw new Error(`AI API error: ${response.status}`);
       }
 
       const result = await response.json();
@@ -123,7 +124,7 @@ router.post('/chat', aiLimiter, async (req, res, next) => {
         message: 'success',
         data: {
           reply,
-          model: 'deepseek-chat',
+          model: AI_MODEL,
           usage: result.usage,
         },
       });
@@ -157,7 +158,7 @@ router.post('/plan', aiLimiter, async (req, res, next) => {
       return res.status(503).json({
         code: 503,
         message: 'AI 服务未配置',
-        data: { reply: '抱歉，AI 路线规划功能尚未配置。请先配置 DeepSeek API Key。' },
+        data: { reply: '抱歉，AI 路线规划功能尚未配置。请先配置 AI API Key。' },
       });
     }
 
@@ -173,14 +174,14 @@ router.post('/plan', aiLimiter, async (req, res, next) => {
     const timeout = setTimeout(() => controller.abort(), 15000);
 
     try {
-      const response = await fetch(`${DEEPSEEK_BASE_URL}/v1/chat/completions`, {
+      const response = await fetch(`${DEEPSEEK_BASE_URL}/chat/completions`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${DEEPSEEK_API_KEY}`,
         },
         body: JSON.stringify({
-          model: 'deepseek-chat',
+          model: AI_MODEL,
           messages,
           temperature: 0.7,
           max_tokens: 1500,
@@ -191,7 +192,7 @@ router.post('/plan', aiLimiter, async (req, res, next) => {
       clearTimeout(timeout);
 
       if (!response.ok) {
-        throw new Error(`DeepSeek API error: ${response.status}`);
+        throw new Error(`AI API error: ${response.status}`);
       }
 
       const result = await response.json();
